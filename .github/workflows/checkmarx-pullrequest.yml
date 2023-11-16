@@ -38,7 +38,7 @@ jobs:
       uses: checkmarx-ts/checkmarx-cxflow-github-action@49d8269b14ca87910ba003d47a31fa0c7a11f2fe
       with:
         project: javavulnlab
-        team: /CxServer
+        team: /CxServer/SP/APAC
         checkmarx_url: https://cxprivatecloud.checkmarx.net/
         checkmarx_username: louisp
         checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }}
