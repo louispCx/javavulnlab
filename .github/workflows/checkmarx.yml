@@ -45,7 +45,7 @@ jobs:
         checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }}
         preset: All-in-one2
         scanners: sast
-        params: --settings-override=true --logging.level.org.springframework.web.client.RestTemplate=TRACE --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+        params: --settings-override=true --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
     - name: Archive production artifacts
       uses: actions/upload-artifact@v3
       with:
