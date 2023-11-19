@@ -46,6 +46,12 @@ jobs:
         preset: All-in-one
         scanners: sast
         params: --logging.level.org.springframework.web.client.RestTemplate=TRACE --logging.level.com.checkmarx.flow.service=DEBUG --logging.level.org.apache.http.wire=TRACE --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: cx.sarif
+        path: |
+          ./cx.sarif
     # Upload the Report for CodeQL/Security Alerts
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
