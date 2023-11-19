@@ -47,6 +47,6 @@ jobs:
         preset: All-in-one2
         scanners: sast
         break_build: false
-        bug-tracker: GitHubPull
+        bug_tracker: GitHubPull
         params: --checkmarx.settings-override=true --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
 
