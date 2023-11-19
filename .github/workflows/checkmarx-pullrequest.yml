@@ -48,5 +48,5 @@ jobs:
         scanners: sast
         break_build: false
         bug_tracker: GitHubPull
-        params: --merge-id=${{ github.event.number }} --checkmarx.settings-override=true --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
+        params: --logging.level.com.checkmarx.flow.service=debug --logging.level.com.checkmarx.flow.utils=debug --logging.level.com.checkmarx.flow.custom=debug --logging.level.com.checkmarx.sdk.service=debug --merge-id=${{ github.event.number }} --checkmarx.settings-override=true --codebash-url=https://cx-apac-se-louis-park.codebashing.com/ --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }} --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=${{ github.event.repository.url }}
 
